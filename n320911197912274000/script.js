@@ -86,3 +86,19 @@ document.addEventListener("click", function () {
 });
 
 
+
+        function displayCurrentTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: false
+            });
+            document.getElementById('currentTime').textContent = `当前时间：${formattedTime}`;
+        }
+
+        window.onload = displayCurrentTime;
