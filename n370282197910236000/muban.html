@@ -57,25 +57,14 @@
     
     
 
-        <div class="tips"><span class="tips-primary">已记录</span></div>
+    <div class="tips"><span class="tips-primary">已记录</span></div>
 
     <script>
-        function appendCurrentTime() {
-            const now = new Date();
-            const formattedTime = now.toLocaleString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-                hour12: false
-            });
-            const tipsPrimary = document.querySelector('.tips-primary');
-            tipsPrimary.textContent += ` ${formattedTime}`;
-        }
-
-        window.onload = appendCurrentTime;
+        document.addEventListener("DOMContentLoaded", function() {
+            var tipsPrimary = document.querySelector(".tips-primary");
+            var currentTime = new Date().toLocaleString();
+            tipsPrimary.textContent += " " + currentTime;
+        });
     </script>
 
 
